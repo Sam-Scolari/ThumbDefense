@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thumb Defense</title>
     <script>
+
         document.addEventListener('mousemove', function (e) {
             let circle = document.getElementById('circle');
             const onMouseMove = (e) => {
@@ -15,6 +16,7 @@
             }
             document.addEventListener('mousemove', onMouseMove);
         });
+
         var currIndex = 1;
         setInterval(function () {
             var circle = document.getElementById('circle');
@@ -50,6 +52,8 @@
 
             display: flex;
             flex-direction: column;
+
+            margin-bottom: 150px;
         }
 
         #landing>img {
@@ -60,19 +64,130 @@
 
         #content {
             color: white;
+            display: flex;
+            flex-direction: column;
+            /* margin: 32px; */
 
         }
 
-        #content>p {
-            font-size: 24px;
-            max-width: 30vw;
+        #archer {
+            width: 150px;
+            margin-left: -40px;
+            transform: rotate(-20deg);
+        }
+
+        #wizard {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #wizard>img {
+            width: 150px;
+            margin-right: -45px;
+            transform: rotateY(180deg) rotateZ(20deg);
+
+        }
+
+        .vid {
+            display: flex;
+
+            justify-content: center;
+            margin-bottom: 250px;
+            margin-top: 32px
+        }
+
+
+        .vid>video {
+            width: 40vw;
+            /* min-width: 80vw; Media Query*/
+            border-radius: 32px;
+
+
+        }
+
+        .left {
+            display: flex;
+            
+            justify-content: space-between;
+            text-align: start;
+            margin-left: 32px
+        }
+
+        .left>img {
+            width: 20vw;
+            height: 20vw;
+            margin-top: -75px;
+        }
+
+        .left>div>p {
+            font-size: 26px;
+            max-width: 33vw;
+            margin-bottom: 250px;
+            line-height: 36px;
+            text-align: left;
+
+        }
+
+        
+
+        .left>div>img {
+            width: 8vw;
+        }
+
+        .center {
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .center>div>img {
+            width: 8vw;
+
+        }
+
+        .center>div>p {
+            font-size: 26px;
+            max-width: 33vw;
+            text-align: center;
+            line-height: 36px;
+
+        }
+
+        .right {
+            display: flex;
+            justify-content: space-between;
+            text-align: end;
+            margin-right: 32px;
+
+        }
+
+        .right>div>img {
+            width: 8vw;
+            align-self: flex-end;
+
+
+        }
+
+        .right>img {
+            width: 20vw;
+            height: 20vw;
+            margin-top: -75px;
+        }
+        .right>div>p {
+            font-size: 26px;
+            max-width: 33vw;
+            text-align: right;
+            margin-bottom: 250px;
+            line-height: 36px;
         }
 
         #circle {
             position: absolute;
             transform: translate(-50%, -50%);
-            height: 100px;
-            width: 100px;
+
+            width: 8vw;
 
             user-select: none;
             -moz-user-select: none;
@@ -89,19 +204,20 @@
             margin-bottom: 32px;
             margin-left: 32px;
             margin-right: 32px;
+            margin-top: 32px;
         }
 
         #houses>img {
-            width: 100px;
-            height: 100px;
+            width: 6vw;
+
         }
 
         #alec {
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 100px;
-            height: 100px;
+            width: 6vw;
+
             margin: 32px;
         }
 
@@ -126,6 +242,8 @@
             width: 450px;
             margin-bottom: 48px;
         }
+
+
     </style>
 </head>
 
@@ -142,11 +260,65 @@
         </div>
     </div>
     <div id="content">
-        <p>Your thumb's the hero! Defend against and attack hordes of enemy goblins!</p>
-        <p>Use your Thumb Shield to block enemy arrows!</p>
-        <p>Goblin Wizards have joined the fray! Deflect their spells back to explode, shock, and freeze goblins.</p>
-        <p>Customize your adventure with unlockable goblin costumes, shields, themes, and music tracks. With so many
-            combinations there are so many possibilities!</p>
+        <div class="left">
+            <div>
+                <img src="iceplatform.png" alt="">
+                <p>Your thumb's the hero! Defend against and attack hordes of enemy goblins!</p>
+
+            </div>
+            <img src="2homes.png" alt="">
+        </div>
+
+        <img id="archer" src="archer_shoot2.png" alt="">
+
+        <div class="center">
+            <div>
+                <img src="iceplatform.png" alt="">
+                <p>Use your Thumb Shield to block enemy arrows!</p>
+            </div>
+        </div>
+
+
+        <div class="vid">
+            <video autoplay muted loop>
+                <source src="gameplay.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="right">
+            <img src="3homes.png" alt="">
+            <div>
+                <img src="iceplatform.png" alt="">
+                <p>Goblin Wizards have joined the fray! Deflect their spells back to explode, shock, and freeze goblins.
+                </p>
+
+            </div>
+        </div>
+        <div id="wizard">
+            <img src="wizard_shoot2.png" alt="">
+
+        </div>
+       
+        <div class="center">
+            <div>
+                <img src="iceplatform.png" alt="">
+                <p style="max-width: 49vw;">Customize your adventure with unlockable goblin costumes, shields, themes,
+                    and music tracks. With so
+                    many
+                    combinations there are so many possibilities!</p>
+            </div>
+
+        </div>
+
+
+        <div class="vid">
+            <video autoplay muted loop>
+                <source src="costumes.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
     </div>
     <div id="houses">
         <img src="standing.png" alt="">
