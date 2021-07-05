@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumb Defense</title>
+    <script>
+        document.addEventListener('mousemove', function (e) {
+            let circle = document.getElementById('circle');
+            const onMouseMove = (e) => {
+                circle.style.left = e.pageX + 'px';
+                circle.style.top = e.pageY + 'px';
+            }
+            document.addEventListener('mousemove', onMouseMove);
+        });
+        var currIndex = 1;
+        setInterval(function () {
+            var circle = document.getElementById('circle');
+            circle.src = 'ringsheild' + currIndex.toString() + '.png';
+            if (currIndex > 5) {
+                currIndex = 1;
+            } else {
+                currIndex++;
+            }
+        }, 250);
+    </script>
+    <style>
+        @font-face {
+            font-family: "SF Pixelate";
+            src: url("SFPixelate.ttf") format("ttf")
+        }
+
+        body {
+            margin: 0;
+            background-color: black;
+            /* overflow-x: hidden; */
+            font-family: "SF Pixelate";
+            cursor: none;
+
+        }
+
+        #landing {
+            background-image: url("bgnew.png");
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            height: 100vh;
+            width: 100vw;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        #landing>img {
+            width: 30vw;
+            margin-left: 2vw;
+            margin-top: 2vw;
+        }
+
+        #content {
+            color: white;
+
+        }
+
+        #content>p {
+            font-size: 24px;
+            max-width: 30vw;
+        }
+
+        #circle {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            height: 100px;
+            width: 100px;
+
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+
+        }
+
+        #houses {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            margin-left: 32px;
+            margin-right: 32px;
+        }
+
+        #houses>img {
+            width: 100px;
+            height: 100px;
+        }
+
+        #alec {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            margin: 32px;
+        }
+
+        #titlegoblin {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 60vh;
+            margin: 32px;
+        }
+
+        #stores {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 25vw;
+            margin-top: 20vh;
+
+        }
+
+        #stores>img {
+            width: 450px;
+            margin-bottom: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="titlegoblin" src="titlegoblin3.png" alt="">
+    <img id="alec" src="alec.png" alt="">
+    <img id="circle" src="ringsheild1.png"></img>
+    <div id="landing">
+        <img src="logo.png" alt="">
+        <div id="stores">
+            <img src="play.png" alt="">
+            <img src="apple.png" alt="">
+            <img src="chrome.png" alt="">
+        </div>
+    </div>
+    <div id="content">
+        <p>Your thumb's the hero! Defend against and attack hordes of enemy goblins!</p>
+        <p>Use your Thumb Shield to block enemy arrows!</p>
+        <p>Goblin Wizards have joined the fray! Deflect their spells back to explode, shock, and freeze goblins.</p>
+        <p>Customize your adventure with unlockable goblin costumes, shields, themes, and music tracks. With so many
+            combinations there are so many possibilities!</p>
+    </div>
+    <div id="houses">
+        <img src="standing.png" alt="">
+        <img src="standing.png" alt="">
+        <img src="standing.png" alt="">
+        <img src="standing.png" alt="">
+        <img src="standing.png" alt="">
+        <img src="standing.png" alt="">
+        <img src="standing.png" alt="">
+    </div>
+</body>
+
+</html>
